@@ -21,6 +21,12 @@ type DeviceDetailPageProps = {
     }>;
 };
 
+export function generateStaticParams() {
+    return devices.map((device) => ({
+        id: String(device.id),
+    }));
+}
+
 export default async function DeviceDetailPage({
     params,
 }: DeviceDetailPageProps) {
